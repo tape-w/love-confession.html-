@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致我最爱的人</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        love: {
+                            primary: '#FF4D6D',
+                            secondary: '#FFB3C1',
+                            accent: '#FF8FA3',
+                            light: '#FFCCD5',
+                            dark: '#C9184A'
+                        }
+                    },
+                    fontFamily: {
+                        romantic: ['Dancing Script', 'cursive', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .heart-beat {
+                animation: heartBeat 1.5s ease-in-out infinite;
+            }
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+            .bg-gradient-love {
+                background: linear-gradient(135deg, #FF4D6D 0%, #FFC2D1 100%);
+            }
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.2); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.2); }
+            70% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-love flex flex-col items-center justify-center p-4 overflow-x-hidden">
+    <!-- 漂浮爱心背景 -->
+    <div class="fixed inset-0 pointer-events-none opacity-20">
+        <div class="absolute top-[10%] left-[10%] text-4xl text-white heart-beat" style="animation-delay: 0s;">❤</div>
+        <div class="absolute top-[20%] left-[80%] text-3xl text-white heart-beat" style="animation-delay: 0.5s;">❤</div>
+        <div class="absolute top-[30%] left-[30%] text-2xl text-white heart-beat" style="animation-delay: 1s;">❤</div>
+        <div class="absolute top-[40%] left-[70%] text-5xl text-white heart-beat" style="animation-delay: 1.5s;">❤</div>
+        <div class="absolute top-[50%] left-[20%] text-3xl text-white heart-beat" style="animation-delay: 2s;">❤</div>
+        <div class="absolute top-[60%] left-[60%] text-2xl text-white heart-beat" style="animation-delay: 2.5s;">❤</div>
+        <div class="absolute top-[70%] left-[40%] text-4xl text-white heart-beat" style="animation-delay: 3s;">❤</div>
+        <div class="absolute top-[80%] left-[90%] text-3xl text-white heart-beat" style="animation-delay: 3.5s;">❤</div>
+        <div class="absolute top-[90%] left-[15%] text-2xl text-white heart-beat" style="animation-delay: 4s;">❤</div>
+        <div class="absolute top-[15%] left-[50%] text-3xl text-white heart-beat" style="animation-delay: 4.5s;">❤</div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="relative bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-3xl w-full transform transition-all duration-700 hover:shadow-love-accent/50 hover:shadow-xl">
+        <!-- 标题 -->
+        <div class="text-center mb-8">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-romantic font-bold text-love-dark text-shadow float-animation">亲爱的<span id="recipientName">宝贝</span></h1>
+            <div class="w-24 h-1 bg-love-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- 内容卡片 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 transform transition-all duration-500 hover:scale-[1.01]">
+            <p class="text-[clamp(1.1rem,2vw,1.3rem)] leading-relaxed text-gray-800 mb-6">
+                在这纷繁复杂的世界里，我的心，早已被你的笑容所占据。每一天，每一刻，我都在感谢命运让我遇见了你。
+            </p>
+            <p class="text-[clamp(1.1rem,2vw,1.3rem)] leading-relaxed text-gray-800 mb-6">
+                你是我生命中最美的风景，是我想共度余生的人。我爱你，不仅仅是今天，而是从过去到未来的每一天。
+            </p>
+            <p class="text-[clamp(1.1rem,2vw,1.3rem)] leading-relaxed text-gray-800">
+                愿我们的爱情如星辰般永恒，如春风般温暖，如美酒般醇香。
+            </p>
+        </div>
+
+        <!-- 选项卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="option-card bg-love-light/70 rounded-xl p-5 shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.03] cursor-pointer" data-option="1">
+                <div class="text-love-dark text-3xl mb-3 text-center">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="text-xl font-romantic font-semibold text-center mb-2">深情告白</h3>
+                <p class="text-gray-700 text-center text-sm">点击倾听我的心声</p>
+            </div>
+
+            <div class="option-card bg-love-light/70 rounded-xl p-5 shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.03] cursor-pointer" data-option="2">
+                <div class="text-love-dark text-3xl mb-3 text-center">
+                    <i class="fa-solid fa-ring"></i>
+                </div>
+                <h3 class="text-xl font-romantic font-semibold text-center mb-2">浪漫承诺</h3>
+                <p class="text-gray-700 text-center text-sm">点击许下我的诺言</p>
+            </div>
+
+            <div class="option-card bg-love-light/70 rounded-xl p-5 shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.03] cursor-pointer" data-option="3">
+                <div class="text-love-dark text-3xl mb-3 text-center">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h3 class="text-xl font-romantic font-semibold text-center mb-2">未来展望</h3>
+                <p class="text-gray-700 text-center text-sm">点击描绘我们的未来</p>
+            </div>
+        </div>
+
+        <!-- 信息显示区域 -->
+        <div id="messageContainer" class="bg-white rounded-xl shadow-lg p-6 mb-8 hidden opacity-0 transition-all duration-500">
+            <h2 id="messageTitle" class="text-2xl font-romantic font-bold text-love-dark mb-4"></h2>
+            <p id="messageContent" class="text-gray-800 leading-relaxed"></p>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="flex justify-center">
+            <button id="closeButton" class="px-6 py-3 bg-love-primary text-white rounded-full shadow-md transform transition-all duration-300 hover:bg-love-dark hover:shadow-lg hover:scale-[1.05] focus:outline-none focus:ring-2 focus:ring-love-primary/50 hidden">
+                <i class="fa-solid fa-heart mr-2"></i>关闭
+            </button>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="mt-8 text-white/80 text-sm">
+        <p class="text-center">用❤️制作 · 永远爱你</p>
+    </footer>
+
+    <script>
+        // 选项数据
+        const options = [
+            {
+                title: "❤️ 深情告白 ❤️",
+                content: "你是我生命中最璀璨的星光，照亮了我前行的道路。你的每一个微笑，都能让我的心绽放出幸福的花朵。我爱你，不仅仅是因为你的美丽，更是因为你那颗善良的心。无论风雨还是晴天，我都会一直在你身边，牵着你的手，永不分离。"
+            },
+            {
+                title: "💍 浪漫承诺 💍",
+                content: "我承诺，我会用我的一生去爱你，珍惜你，保护你。我会为你撑起一片天空，让你永远无忧无虑。我会陪你走过每一个春夏秋冬，看遍世间美景。我会在你开心时与你分享喜悦，在你难过时给你温暖的怀抱。"
+            },
+            {
+                title: "🌟 未来展望 🌟",
+                content: "我希望我们能一起建立一个温暖的家，有一个可爱的小院子，种满你喜欢的花。我希望我们能一起旅行，看遍世界的每一个角落，创造属于我们的回忆。我希望我们能一起慢慢变老，坐在摇椅上，回忆我们走过的点点滴滴。我希望我们的爱情能经得起时间的考验，永远保持最初的那份激情和纯真。"
+            }
+        ];
+
+        // 获取URL参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        
+        // 如果有名字参数，替换标题中的名字
+        if (name) {
+            document.getElementById('recipientName').textContent = name;
+        }
+
+        // 获取元素
+        const optionCards = document.querySelectorAll('.option-card');
+        const messageContainer = document.getElementById('messageContainer');
+        const messageTitle = document.getElementById('messageTitle');
+        const messageContent = document.getElementById('messageContent');
+        const closeButton = document.getElementById('closeButton');
+
+        // 选项卡片点击事件
+        optionCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const optionIndex = parseInt(card.dataset.option) - 1;
+                
+                // 设置消息内容
+                messageTitle.textContent = options[optionIndex].title;
+                messageContent.textContent = options[optionIndex].content;
+                
+                // 显示消息容器
+                messageContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    messageContainer.classList.remove('opacity-0');
+                }, 10);
+                
+                // 显示关闭按钮
+                closeButton.classList.remove('hidden');
+                setTimeout(() => {
+                    closeButton.classList.remove('opacity-0');
+                }, 10);
+                
+                // 平滑滚动到消息容器
+                messageContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+
+        // 关闭按钮点击事件
+        closeButton.addEventListener('click', () => {
+            // 隐藏消息容器
+            messageContainer.classList.add('opacity-0');
+            closeButton.classList.add('opacity-0');
+            setTimeout(() => {
+                messageContainer.classList.add('hidden');
+                closeButton.classList.add('hidden');
+            }, 500);
+        });
+
+        // 添加心形粒子效果
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'absolute text-love-primary';
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.style.animation = `float ${Math.random() * 5 + 3}s linear forwards`;
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+        
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>    
